@@ -38,6 +38,7 @@ GENERAL
   appearance: 0;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 body {
@@ -419,6 +420,84 @@ SINGLE POST
 }
 
 /*================================================================
+CATEGOTY POSTS
+================================================================*/  
+.category__title{
+  height: 15rem;
+  margin-top: 4.5rem;
+  background: #060607;
+  display: grid;
+  place-items: center;
+}
+
+/*================================================================
+EMPTY PAGES
+================================================================*/
+.empty_page {
+  height: 70vh;
+  display: grid;
+  place-content: center;
+}
+
+/*================================================================
+GENERAL FORM
+================================================================*/
+.form__section {
+  display: grid;
+  place-items: center;
+  height:100vh;
+}
+
+.form__section-container {
+  width: var(--form-width);
+}
+
+.alert__message {
+  padding: 0.8rem 1.4rem;
+  margin-bottom: 1rem;
+  border-radius: var(--card-border-radius-2);
+}
+
+.alert__message.error {
+  background: var(--color-red-light);
+  color: var(--color-red);
+}
+
+.alert__message.success {
+  background: var(--color-green-light);
+  color: var(--color-green);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form__control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+input, textarea, select {
+  padding: 0.8rem 1.4rem;
+  background-color: #040405;
+  border-radius: var(--card-border-radius-2);
+  resize: none;
+  color: var(--color-white);
+}
+
+.form__section small {
+  margin-top: 1rem;
+  display:  block;
+}
+
+.form__section small a {
+  color:#f2f2fe;
+}
+
+/*================================================================
 MEDIA QUERIES(MEDIUM DEVICES)
 ================================================================*/  
 
@@ -554,26 +633,11 @@ MEDIA QUERIES(MEDIUM DEVICES)
   .search__bar-container {
     width: 60%;
   }
-}
 
-/*================================================================
-CATEGOTY POSTS
-================================================================*/  
-.category__title{
-  height: 15rem;
-  margin-top: 4.5rem;
-  background: #060607;
-  display: grid;
-  place-items: center;
-}
-
-/*================================================================
-EMPTY PAGES
-================================================================*/
-.empty_page {
-  height: 70vh;
-  display: grid;
-  place-content: center;
+  /*=============== GENERAL FORM ===============*/
+  .form__section-container {
+    padding: 3rem;
+  }
 }
 
 /*================================================================
@@ -621,6 +685,11 @@ MEDIA QUERIES(SMALL DEVICES)
   /*=============== SIGNLE POST ===============*/
   .singlepost__container {
     background: transparent;
+    padding: 0;
+  }
+
+  /*=============== GENERAL FORM ===============*/
+  .form__section-container {
     padding: 0;
   }
 }
